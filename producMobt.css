@@ -1,0 +1,17 @@
+@media only screen and (max-width: 680px) {
+ 
+    #dynamic-container{
+    max-width: 1350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 45px;
+    }  
+    .data-right{
+    width: 100%;
+    }
+    .img-leftt{
+    width: 100%;
+    }
+}
