@@ -4,6 +4,9 @@
     padding: 0;
     font-family: "Montserrat", sans-serif;
 }
+a{
+    text-decoration: none;
+}
 .view-container{
     /* max-width: 1200px; */
     margin: auto;
