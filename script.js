@@ -256,7 +256,8 @@ accssProducts.classList.add("products")
 function craeteProduct(data){
 
     //image creation
-    const productCard = document.createElement("div")
+    const productCard = document.createElement("a")
+    productCard.href=`product.html?product_id=${btoa(data.id)}`
     productCard.classList.add("product-card")
     productCard.id = data.id
     productCard.innerHTML=`<img class="product-image" src="${data.preview}" alt="${data.name}">`
