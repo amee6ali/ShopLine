@@ -4,11 +4,22 @@ function fetchApiCall(url){
   })
 }
 
+let cartValue 
+
+
+if(!(localStorage.getItem('cart-count'))) {
+  console.log("initialization")
+	localStorage.setItem('cart-count',0);
+} else {
+  cartValue = localStorage.getItem('cart-count');
+	localStorage.setItem('cart-count', cartValue);
+  console.log("already Have")
+  document.querySelector(".cartNum").innerHTML =  cartValue
+  console.log("initail updation")
+}
 
 
 
-
-let productList
 
 fetchApiCall("https://5d76bf96515d1a0014085cf9.mockapi.io/product").then(data=>{
 

@@ -62,9 +62,14 @@ function imageDetaisCration(product){
   mainContainer.appendChild(imgDiv)
   mainContainer.appendChild(DetailsDiv)
 
- cartClick()
-}
+ cartClick({
+   id:product.id,
+   name:product.name,
+   price:product.price,
+   image:product.preview,
+ }) //Here function call coaded due to 1.button creation is asynch 2.Check Out page argument pass
 
+}
 
 let cartValue 
 
@@ -79,31 +84,81 @@ if(!(localStorage.getItem('cart-count'))) {
   document.querySelector(".cartNum").innerHTML =  cartValue
   console.log("initail updation")
 }
-// document.querySelector(".cartNum").innerHTML =  cartValue
 
+let addedItems={}
 
-function cartClick(){
+function cartClick(details){
 document.querySelector(".add-cart-btn").addEventListener("click",()=>{
-  console.log("clicked")
+  cartNumberIncrease(details.id)
+  createCartArray(details)
+
+  
+})
+}
+
+function cartNumberIncrease(){
   cartValue = localStorage.getItem('cart-count')
   cartValue = Number(cartValue) + 1
   localStorage.setItem('cart-count',cartValue)
   document.querySelector(".cartNum").innerHTML =  cartValue
-  console.log(cartValue)
-
-})
 }
 
+let myCartData
+
+function createCartArray(details) {
+
+  console.log(details)
+  if (window.localStorage.getItem("product-list") === null) {
+    myCartData = [];
+  }
+  else {
+    myCartData = JSON.parse(window.localStorage.getItem("product-list"));
+  }
+  if (myCartData.length === 0) {
+    var myObj = {
+      id: details.id,
+      title: details.name,
+      count: 1,
+      price: details.price,
+      image: details.image
+    };
+    myCartData.push(myObj);
+  }
+
+  else if (myCartData.length != 0) {
+    var w = 0;
+    for (var i = 0; i < myCartData.length; i++) {
+      if (myCartData[i].id == details.id) {
+        myCartData[i].count = parseInt(myCartData[i].count) + 1;
+        w += 1;
+      }
+    }
+    if (w == 0) {
+      var myObj = {
+        id: details.id,
+        title: details.name,
+        count: 1,
+        price: details.price,
+        image: details.image
+      };
+      myCartData.push(myObj);
+    }
+  }
+  window.localStorage.setItem("product-list",JSON.stringify(myCartData));
 
 
-// var myCartData = [];
-// var cartIntialValue;
+}
 
-// if(localStorage.getItem('cart-count') == null) {
-// 	localStorage.setItem('cart-count', '0');
-// } else {
-// 	var cartValue = localStorage.getItem('cart-count');
-// 	localStorage.setItem('cart-count', cartValue);
-// }
+// -------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
