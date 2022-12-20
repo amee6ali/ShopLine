@@ -5,13 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopLine</title>
+
+    <!-- axios library cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js" integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- slick library -->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+       <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/21aac9c2ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" media="screen and (min-width: 20px) and (max-width: 678px)" href="./mobile.css">
+
 </head>
 <body>
+
+    <!-- NAV BAR & HEADER -->
+    <section>
+        <div id="header">
+            <nav>
+                <div class="logo">
+                    <a href="#">
+                        <h4>SHOP<span class="line-text">LINE</span></h4>
+                    </a>
+                </div>
+                <div class="categories">
+                    <a href="#cloaths"><h5>CLOATHING</h5> </a>
+                    <a href="#accessories"> <h5>ACCESSORIES</h5></a>     
+                </div>
+                <div class="search-bar">
+                    <form action="">
+                        <input type="text" placeholder="Search for products...">
+                    </form>
+                </div>
+                <a href="./checkout.html" class="cart-user">
+                    <p class="cartNum">0</p>
+                    <i class="fa-solid cart-icon fa-cart-shopping"></i> 
+                </a>
+                <div class="user-imagediv">
+                    <img class="user-image" src="./images/user-ameer.jpg" alt="user-photo">
+                </div>
+            </div>
+            </nav>
+    </section>
+    <!-- SLIDER IMAGE -->
+    <div class="slidercontainer">
+        <img src="./images/banner1.png" alt="banner1">
+        <img src="./images/banner2.png" alt="banner2">
+        <img src="./images/banner3.png" alt="banner3">
+        <img src="./images/banner4.png" alt="banner4">
+      </div>
     <div class="view-container">
-         <!-- THE WHOLE DTATA WILL DYNAMICALY LOAD BY JAVASCRIPT  -->
+   
+        <!-- THE WHOLE DTATA WILL DYNAMICALY LOAD BY JAVASCRIPT  -->
+        
     </div>
+
+    <!-- footer -->
+
+    <div class="footer">
+        <div class="footerview">
+            <ul>
+                <li>ONLINE STORE</li>
+                <li>MEN CLOTHING</li>
+                <li>MEN CLOTHING</li>
+                <li>MEN ACCESSORIES</li>
+                <li>WOMEN ACCESSORIES</li>
+            </ul>
+            <ul>
+                <li>HELPFUL LINKS</li>
+                <li>HOME</li>
+                <li>ABOUT</li>
+                <li>CONTACTS</li>
+         
+            </ul>
+            <ul>
+                <li>PATNERS</li>
+                <li>PETER ENGLEND</li>
+                <li>UCB</li>
+                <li>BOAT LIFE-STYLE</li>
+                <li>UCB</li>
+            </ul>
+            <ul>
+                <li>ADRESS</li>
+                <li>HiLite Mall</li>
+                <li>CALICUT, KERALA</li>
+                <li>676551</li>
+            </ul>
+        </div>
+    </div>
+
+     <!-- Slikker JS  -->
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
