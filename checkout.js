@@ -47,23 +47,28 @@ let ToMinizeCount
                         console.log(ToremoveID)
                         ToMinizeCount=item.count
                         rmidx = idx
-                        console.log(item.id)
+                        console.log(ToMinizeCount)
                        
                     }
                 })
     
                 cartProductData.splice(rmidx,1)
                 window.localStorage.setItem("product-list",JSON.stringify(cartProductData));
+                cartNumberDecreaseInsta(ToMinizeCount)
                 window.location.reload()
-                cartNumberDecrease(ToMinizeCount)
               })
+
+
+
+              
 
               //To Do : Total payment updation
         }))
   
-          function cartNumberDecrease(ToMinizeCount){
+          function cartNumberDecreaseInsta(ToMinizeCount){
+            console.log(ToMinizeCount)
             let cartValue = localStorage.getItem('cart-count')
-            cartValue = Number(cartValue) - ToMinizeCount
+            cartValue = Number(cartValue) - Number(ToMinizeCount)
             localStorage.setItem('cart-count',cartValue)
             document.querySelector(".cartNum").innerHTML =  cartValue
           }  
@@ -82,7 +87,7 @@ let ToMinizeCount
 
                 
                 cartProductData.forEach((item,idx,arr)=>{
-                    if(item.id===parentIDforAddition){
+                    if(item.id===parentIDforAddition){                    
                         item.count= item.count+1
                         cartNumberincrease()
                     }
@@ -116,14 +121,33 @@ let ToMinizeCount
                   let parentIDforsubs = e.target.parentElement.parentElement.parentElement.id              
                   cartProductData.forEach((item,idx,arr)=>{
                       if(item.id===parentIDforsubs){
-                          item.count= item.count-1
-                          cartNumberDecrease()
+
+                        console.log(parentIDforsubs,item.id,item.count)
+
+                        if(item.count == 1){
+                            console.log("parentIDforsubs,item.id,item.count")
+                            document.querySelector(".alert").innerHTML="Can't decease count of an item lessthan 1"
+                            document.querySelector(".alert").classList.replace("hide","show")
+                            setTimeout(() => {
+                                document.querySelector(".alert").classList.replace("show","hide")
+                                document.querySelector(".alert").innerHTML=""
+                            }, 3000);
+
+
+
+                        }
+                        else{
+                            item.count= item.count-1
+                            cartNumberDecrease()
+                            window.localStorage.setItem("product-list",JSON.stringify(cartProductData));
+                            window.location.reload()
+                        }
+                         
                       }
                   })
       
   
-                  window.localStorage.setItem("product-list",JSON.stringify(cartProductData));
-                  window.location.reload()
+
                  
                 })
   

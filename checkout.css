@@ -101,3 +101,23 @@
     border-top-right-radius: 4px;
     background-color: #009688;
 }
+.alert{
+    background: rgba(255, 0, 0, 0.692);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 400px;
+    margin: auto;
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 200px);
+    transition: all 200ms ease-in-out;
+}
+
+.show{
+    display: block;
+   
+}
+.hide{
+    display: none;
+}
