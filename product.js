@@ -67,6 +67,7 @@ function imageDetaisCration(product){
    name:product.name,
    price:product.price,
    image:product.preview,
+   
  }) //Here function call coaded due to 1.button creation is asynch 2.Check Out page argument pass
 
 }
@@ -89,7 +90,9 @@ let addedItems={}
 
 function cartClick(details){
 document.querySelector(".add-cart-btn").addEventListener("click",()=>{
+
   cartNumberIncrease(details.id)
+
   createCartArray(details)
 
   
@@ -108,12 +111,16 @@ let myCartData
 function createCartArray(details) {
 
   console.log(details)
+
+
   if (window.localStorage.getItem("product-list") === null) {
     myCartData = [];
   }
+
   else {
     myCartData = JSON.parse(window.localStorage.getItem("product-list"));
   }
+
   if (myCartData.length === 0) {
     var myObj = {
       id: details.id,

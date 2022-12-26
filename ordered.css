@@ -1,0 +1,7 @@
+.successful{
+    height: 500px;
+    width: 90%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0) url("./order_placed.svg") no-repeat center center ;
+    margin: 70px auto;
+}

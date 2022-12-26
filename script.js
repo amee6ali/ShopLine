@@ -6,6 +6,7 @@ function fetchApiCall(url){
 
 let cartValue 
 
+console.log(Number(false))
 
 if(!(localStorage.getItem('cart-count'))) {
   console.log("initialization")
@@ -117,5 +118,15 @@ $(document).ready(function() {
 
   console.log("hii")
 });
+
+
+
+
+
+
+
+
+
+
 
 

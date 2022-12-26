@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+
 }
 html{
     scroll-behavior: smooth;
@@ -11,13 +12,16 @@ a{
     text-decoration: none;
     color: none;
 }
-#header{
-
-
+.headre{
     position: fixed;
     z-index: 5;
     top: 0px;
     width: 100%;
+    box-shadow: 4px 15px 22px -10px rgba(0,0,0,0.45);
+}
+#header {
+    max-width:1280px;
+    margin: auto;
 }
 #header nav{
     position: relative;
@@ -26,15 +30,16 @@ a{
     margin: auto;
     padding: 20px 65px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
-    box-shadow: 4px 15px 22px -10px rgba(0,0,0,0.45);
     background-color: rgba(255, 255, 255, 0.911);
 }
 nav{
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
+    display: flex;
+    justify-content: space-between;
 }
 .categories{
     display: flex;
@@ -64,20 +69,22 @@ nav{
     font-weight: 700;
 }
 .cart-user{
-    display: flex;
+    align-self: flex-end;
     position: relative;
-    align-items: center;
+
 }
 .user-image{
-    display: block;
+    display: flex;
     width: 40px;
     border-radius: 50%;
     padding: 2px solid #fff;
     border: 2px solid #ffffff;
+    align-self: flex-end;
 }
 .user-imagediv{
     border-radius: 50%;
     border: 2px solid #009688;
+    align-self: self-end;
 }
 .cart-icon{
     color: rgb(0, 0, 0);
@@ -88,7 +95,7 @@ nav{
     padding-right: 25px;
 }
 .cart-user{
-    margin-left: 215px;
+    /* margin-left: 215px; */
 }
 .cartNum{
     display: inline-block;
@@ -104,13 +111,63 @@ nav{
 
 
 
+@media screen and (min-width: 20px) and (max-width: 678px) {
+    
+    #header input{
+        margin-left: 20px;
+        width: 15px;
+        height: 30px;
+        background-color: rgb(255, 255, 255);
+        transition: all 200ms ease-in-out;
+    }
+    .categories{
+        display: none;
+    }
+    #header input:focus{
+        width: 200px;
+    }
+    #header input:focus .logo{
+        display: none;
+    }
+    .cart-user{
+        align-self: flex-end;
+    }
+    #header nav{
+        padding: 20px 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    .logo{
+   flex: 2;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* -----------------------slider image--------------------------------------------- */
 
 .slidercontainer{
     max-width: 100%;
-    background-color: yellow;
+    background-color: #009688;
     margin: auto;
     margin-top: 84px;
     z-index: -2;
