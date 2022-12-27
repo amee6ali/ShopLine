@@ -6,14 +6,17 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-    margin-top: 45px;
+    margin-top: 83px;
     }  
     .data-right{
     width: 100%;
+    /* display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse; */
     }
     .img-leftt{
         padding: 20px;
-    width: 100%;
+        width: 100%;
     }
     .data-right h1{
         font-size: 32px;
@@ -36,5 +39,9 @@
     .footerview ul{
         width: 50%;
         margin-bottom: 25px;
+    }
+
+    .preview-image{
+        margin-top: 0px;
     }
 }

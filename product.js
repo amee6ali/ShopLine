@@ -113,7 +113,7 @@ function createCartArray(details) {
   console.log(details)
 
 
-  if (window.localStorage.getItem("product-list") === null) {
+  if (!(window.localStorage.getItem("product-list"))) {
     myCartData = [];
   }
 

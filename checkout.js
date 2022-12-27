@@ -168,8 +168,8 @@ let ToMinizeCount
 
 
   document.querySelector(".orderBtn").addEventListener("click",()=>{
-    // localStorage.clear()
-  //   cartProductData=[]
+    localStorage.clear()
+    cartProductData=[]
     localStorage.setItem('product-list',cartProductData)
    document.querySelector(".cartNum").innerHTML = localStorage.getItem('cart-count')
   })
